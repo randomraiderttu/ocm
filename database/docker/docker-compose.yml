@@ -9,6 +9,6 @@ services:
       - "/Users/bhudson/dockervolumes/ocmdb:/var/lib/postgresql/data"
     environment:
       - POSTGRES_PASSWORD=<default>
-      - POSTGRES_USER=<default>
+      - POSTGRES_USER=test
       - POSTGRES_DB=OCM
     shm_size: '256MB'
