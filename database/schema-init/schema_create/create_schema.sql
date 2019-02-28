@@ -1,1 +1,5 @@
-select * from information_schema.schemata;
+CREATE USER ocmadmin WITH PASSWORD 'ocmadmin';
+CREATE SCHEMA ocm AUTHORIZATION ocmadmin;
+CREATE USER ocmuser WITH PASSWORD 'ocmuser';
+CREATE ROLE ocm_user_r;
+GRANT SELECT ON ALL TABLES IN SCHEMA ocm TO ocm_user_r;
