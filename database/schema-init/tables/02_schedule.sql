@@ -18,8 +18,8 @@ COMMENT ON TABLE ocm.schedule IS 'Holds the different schedules created that are
 COMMENT ON COLUMN ocm.schedule.schedule_id IS 'Primary Key; Sequence generated.';
 COMMENT ON COLUMN ocm.schedule.schedule_name IS 'Natural Key of the table. Defines the name given to this schedule. Examples: Bi-Weekly Schedule, Monthly Rotation, Weekly Manager On-Call Schedule, etc.';
 COMMENT ON COLUMN ocm.schedule.interval_type IS 'Defines the base interval for this schedule rotation. Restricted to DAY, WEEK, MONTH only. The interval type and value make up the rotation schedule.';
-COMMENT ON COLUMN ocm.schedule.interval_value IS 'Defines the interval value to apply to the interval type. Example: Interval type of Week and Interval value of 2 would result in a bi-weekly schedule.';
-COMMENT ON COLUMN ocm.schedule.generation_interval IS 'Defines how many intervals of the schedule should be created in advance in the calendar. Example: If type is WEEK, interval value is 2 and generation_interval is 10, then the system would always house 20 weeks of on-call schedule into the future.';
+COMMENT ON COLUMN ocm.schedule.interval_value IS 'Defines the interval value to apply to the interval type. Example: Interval type of Week and Interval value of 2 would result in a bi-weekly schedule. Limited to a value less than 365.';
+COMMENT ON COLUMN ocm.schedule.generation_interval IS 'Defines how many intervals of the schedule should be created in advance in the calendar. Example: If type is WEEK, interval value is 2 and generation_interval is 10, then the system would always house 20 weeks of on-call schedule into the future. Limited to a value less than 100.';
 COMMENT ON COLUMN ocm.schedule.notes IS 'Free text notes field for any additional description needed.';
 COMMENT ON COLUMN ocm.schedule.active_status IS 'Y/N field that defines if this schedule is active or soft-deleted.';
 COMMENT ON COLUMN ocm.schedule.create_date IS 'Date this record was created in the database system.';
